@@ -1,0 +1,31 @@
+[package]
+name = "aspect-ratio"
+version = "0.1.0"
+edition = "2024"
+authors = ["romnn <contact@romnn.com>"]
+description = "Scales a 2D rect to fit or cover one or more bounds, optionally preserving aspect-ratio"
+license-file = "LICENSE"
+readme = "README.md"
+homepage = "https://github.com/romnn/aspect-ratio"
+repository = "https://github.com/romnn/aspect-ratio"
+categories = [
+  "mathematics"
+]
+keywords = [
+  "arithmetics",
+  "overflow",
+  "underflow",
+  "casting",
+]
+exclude = [
+  "tests/"
+]
+
+
+[dependencies]
+strum = { version = "0", features = ["derive"] }
+safe-arithmetic = { git = "https://github.com/romnn/safe-arithmetic.git" }
+
+[dev-dependencies]
+color-eyre = "0"
+similar-asserts = "1"
