@@ -13,7 +13,9 @@ jobs:
       matrix: ${{ steps.compute-matrix.outputs.matrix }}
     steps:
       - uses: actions/checkout@v4
-      - uses: romnn/cargo-feature-combinations@main
+      - uses: baptiste0928/cargo-install@v3
+        with:
+          crate: cargo-feature-combinations
       - name: Compute feature matrix
         id: compute-matrix
         run: |-
