@@ -1,30 +1,51 @@
 [package]
 name = "aspect-ratio"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2024"
 authors = ["romnn <contact@romnn.com>"]
-description = "Scales a 2D rect to fit or cover one or more bounds, optionally preserving aspect-ratio"
-license-file = "LICENSE"
+publish = true
+description = "Scale a 2D rect to fit or cover one or more bounds, optionally preserving aspect-ratio"
+license = "MIT"
 readme = "README.md"
+documentation = "https://docs.rs/aspect-ratio"
 homepage = "https://github.com/romnn/aspect-ratio"
 repository = "https://github.com/romnn/aspect-ratio"
 categories = [
-  "mathematics"
+  "mathematics",
+  "gui",
+  "graphics",
+  "multimedia::images",
+  "rendering",
 ]
 keywords = [
-  "arithmetics",
-  "overflow",
-  "underflow",
-  "casting",
+  "aspect-ratio",
+  "images",
+  "graphics",
+  "scaling",
 ]
 exclude = [
-  "tests/"
+  ".github",
+  ".typos.toml",
+  ".ignore",
+  ".bumpversion.toml",
+  "tests/",
+  "taskfile.yaml",
 ]
 
+[features]
+default = []
+
+[package.metadata.cargo-feature-combinations]
+exclude_features = ["default"]
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+rustc-args = ["--cfg", "docsrs"]
 
 [dependencies]
 strum = { version = "0", features = ["derive"] }
-safe-arithmetic = { git = "https://github.com/romnn/safe-arithmetic.git" }
+safe-arithmetic = "0"
 
 [dev-dependencies]
 color-eyre = "0"
